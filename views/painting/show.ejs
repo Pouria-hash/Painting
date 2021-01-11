@@ -1,0 +1,68 @@
+<% layout('./layouts/boilerplate') %>
+    <div class="container">
+        <div class="row m-md-3">
+            <div class="col-md-8 my-2">
+                <div class="card">
+                    <%- include('../partial/imagesCarousel') %>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%= painting.title %>
+                            </h5>
+                            <p class="card-text">
+                                <%= painting.description %>
+                            </p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Artist: <%= painting.author.username.toUpperCase() %>
+                            </li>
+                        </ul>
+                        <div class="card-body">
+                            <% if (currentUser && painting.author.equals(currentUser._id)) { %>
+                                <a class="btn btn-info btn-small" href="/painting/<%= painting._id %>/edit">Edit
+                                    Canvas</a>
+                                <form class="d-inline" action="/painting/<%= painting._id %>?_method=DELETE"
+                                    method="POST">
+                                    <button class="btn btn-danger">Delete</button>
+                                </form>
+                                <% } %>
+                                    <a class="btn btn-primary" href="/painting">Back to paintings</a>
+                        </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <% if (currentUser) { %>
+                    <h4>Leave Review</h4>
+                    <form action="/painting/<%= painting._id %>/reviews" method="POST">
+                        <div>
+                            <label class="form-label mb-3" for="rate">Rate</label>
+                            <input class="form-range mb-3" type="range" name="rate" id="rate" min="1" max="5">
+                        </div>
+                        <div>
+                            <label class="form-label mb-3" for="text">Review</label>
+                            <textarea class="form-control" name="text" id="text" cols="30" rows="10"></textarea>
+                        </div>
+                        <div class="mt-3">
+                            <button class="btn btn-primary">Enter Review</button>
+                        </div>
+                    </form>
+                    <% } %>
+                        <h4 class="mt-4">Reviews</h4>
+                        <% for(let review of painting.reviews) {%>
+                            <div class="card my-2 p-3">
+                                <h5>Rate: <%= review.rate %>
+                                </h5>
+                                <p>
+                                    <%= review.text %>
+                                </p>
+                                <% if (currentUser && review.author.equals(currentUser._id)) { %>
+                                    <form
+                                        action="/painting/<%= painting._id %>/reviews/<%= review._id %>?_method=DELETE"
+                                        method="POST">
+                                        <button class="btn btn-danger">Delete</button>
+                                    </form>
+                                    <% } %>
+                            </div>
+                            <% } %>
+            </div>
+        </div>
+    </div>

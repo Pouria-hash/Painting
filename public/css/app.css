@@ -1,0 +1,97 @@
+
+body{
+    height: 100vh;
+}
+
+#nav{
+    background-color: #f8f9fa;
+    
+}
+
+#footer{
+    background-color: #f8f9fa;
+}
+#nav a{
+    color: #9d8189;
+}
+
+#indexPage{
+  
+    padding: 20px 20px;
+}
+
+.canvases{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.image-index{
+width: 100%;
+height: 300px;
+object-fit: cover;  
+}
+
+#indexCard{
+    width: 25rem;
+    margin: 5px;
+    
+}
+
+#indexCardBody{
+    height: 17rem;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+}
+
+.b-index{
+    margin-top: auto;
+}
+
+a{
+    color: #e71d36;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+
+.imgCarousel{
+width: 100%;
+object-fit: cover;
+height: 500px;
+}
+
+.thumbnail{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+
+
+.pagination{
+    justify-content: center;
+    
+}
+
+#registerForm{
+    margin: 20px 0;
+    /* align-items: center;
+    height: 100vh; */
+
+}
+
+.cardImg{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.userForm{
+    box-shadow: 0 0 1.5rem 0.8rem  gray;
+}
+

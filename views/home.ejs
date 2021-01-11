@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="icon" href="https://www.flaticon.com/svg/static/icons/svg/1197/1197516.svg" type="image/x-icon">
+</head>
+
+<body class="d-flex flex-column">
+
+    <header>
+        <div class="d-flex flex-row p-3 row mx-0">
+            <div class="col-md-3" id="hdiv">
+                <h2 id="htitle">Canvas</h2>
+            </div>
+            <nav class="navbar ms-auto col-md-6 justify-content-center">
+                <a href="/" class="nav-link actived">Home</a>
+                <% if(!currentUser) {%>
+                    <a href="login" class="nav-link">Login</a>
+                    <a href="register" class="nav-link">Register</a>
+                    <% }else{ %>
+                        <a href="logout" class="nav-link">Log Out</a>
+                        <a href="#" class="nav-link">
+                            Hi <%= currentUser.username %>
+                        </a>
+                        <% } %>
+            </nav>
+        </div>
+        <div class="" id="head-main">
+            <h1 id="main-head">Wellcome To Canvas</h1>
+            <p class="lead" id="main-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+            <a href="/painting" class="btn btn-secondary btn-lg" id="btn-canvas">The Canvas</a>
+        </div>
+    </header>
+    <main>
+        <div class="text-center" id="main">
+            <div>
+                <p>HOW YOU CREATE YOUR CANVAS</p>
+                <h3>Createing A Canvas Simpler <br> Then You Thin</h3>
+            </div>
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-md-5">
+                        <img class="mb-3 img-fluid img-how"
+                            src="https://images.unsplash.com/photo-1580493113011-ad79f792a7c2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=375&q=80"
+                            alt="">
+                        <h4 class="mb-3">1. Choose your suitable Canvas</h4>
+                        <p class="how-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam officia
+                            explicabo porro
+                            mollitia eveniet natus hic enim temporibus molestias sunt aperiam possimus autem, ea
+                            exercitationem iste ex repellat labore doloremque.</p>
+                    </div>
+                    <div class="col-md-5 right-section">
+                        <img class="mb-3 img-fluid img-how"
+                            src="https://images.unsplash.com/photo-1600220448431-c24e098ff4c2?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjJ8fHBhaW50fGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                            alt="">
+                        <h4 class="mb-4">2. Pick your color and brush</h4>
+                        <p class="how-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non dolore quaerat
+                            magni nihil
+                            culpa, sapiente id hic repellat sint repellendus quam officiis iure itaque, quibusdam quod
+                            explicabo maiores. Aperiam, quod.</p>
+                    </div>
+                </div>
+                <div class="row justify-content-between">
+                    <div class="col-md-5">
+                        <img class="img-fluid mb-3 img-how"
+                            src="https://images.unsplash.com/photo-1585255318860-a65b32b03585?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80"
+                            alt="">
+                        <h4 class="mb-3">3. Start Painting</h4>
+                        <p class="how-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita magni
+                            harum inventore dolor iusto necessitatibus ad quod? Cum accusantium placeat molestiae quos,
+                            non, repellendus illum nostrum maxime dolorum sed numquam?</p>
+                    </div>
+                    <div class="col-md-5 right-section">
+                        <img class="mb-3 img-fluid img-how"
+                            src="https://images.unsplash.com/photo-1583766432613-4e668f167f3f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80"
+                            alt="">
+                        <h4 class="mb-3">4. Then Share Your Painting In Cavas</h4>
+                        <p class="how-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti tempore
+                            consequuntur quos laborum eaque ex doloribus debitis minima itaque dolores, dicta
+                            exercitationem sapiente nulla repellendus perferendis deleniti, vel nisi quo!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <footer class="text-center pb-5">
+        <h4>Make Something Great</h4>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

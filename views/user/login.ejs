@@ -1,0 +1,29 @@
+<% layout('./layouts/boilerplate') %>
+    <div class="container">
+        <div class="row" id="registerForm">
+            <div class="col-md-6 offset-md-3 col-lg-4 offset-lg-4">
+                <div class="card userForm">
+                    <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80"
+                        class="card-img-top cardImg" alt="">
+                    <div class="card-body">
+                        <h1 class="card-title">Login Form</h1>
+                        <form action="/login" novalidate class="validate-form" method="POST">
+                            <div>
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" name="username" autofocus class="mb-1 form-control" id="username"
+                                    required>
+                            </div>
+                            <div>
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" name="password" class="mb-1 form-control" id="password">
+                            </div>
+                            <div class="d-grid">
+                                <button class="btn btn-success">Login</button>
+                            </div>
+                            <!-- <a href="/auth/google">Login google</a> -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
