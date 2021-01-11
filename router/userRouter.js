@@ -3,7 +3,7 @@ const router = express.Router();
 const wrapAsync = require('../utily/wrapAsync')
 const User = require('../models/user');
 const passport = require('passport');
-
+const user = require('../control/userControl')
 
 
 
@@ -14,24 +14,11 @@ const passport = require('passport');
 //     res.send('ok')
 // })
 
-router.get('/register', (req, res) => {
-    res.render('user/register')
-})
+router.get('/register', user.registerForm)
 
-router.post('/register', wrapAsync(async (req, res) => {
-    const { username, email, password } = req.body;
-    const u = new User({ username, email })
-    const registerUser = await User.register(u, password)
-    req.logIn(registerUser, err => {
-        if (err) return next(err)
-    })
-    req.flash('success', 'Wellcome')
-    res.redirect('/painting')
-}))
+router.post('/register', wrapAsync(user.registr))
 
-router.get('/login', (req, res) => {
-    res.render('user/login')
-})
+router.get('/login', user.loginForm)
 
 // google sign in (broken)
 
@@ -44,19 +31,10 @@ router.get('/login', (req, res) => {
 //     res.redirect('/painting')
 // });
 
-router.post('/login', passport.authenticate('local', { failureFlash: true, failureRedirect: '/login' }), (req, res) => {
-    const foundPath = req.session.returnTo || '/painting'
-    delete req.session.returnTo
-    req.flash('success', 'Wellcome Back')
-    res.redirect(foundPath)
-})
+router.post('/login', passport.authenticate('local', { failureFlash: true, failureRedirect: '/login' }), user.loginUser)
 
 
 
-router.get('/logout', (req, res) => {
-    req.logOut()
-    req.flash('success', 'GoodBye')
-    res.redirect('/painting')
-})
+router.get('/logout', user.logoutUser)
 
 module.exports = router

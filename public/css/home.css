@@ -16,9 +16,9 @@ backface-visibility: hidden;
     align-self: center;
 } 
 
-nav a{
+.nav-link{
     color: #e5989b;
-    transition: 2s;
+    transition: 0.1s;
 }
 nav a:hover{
 color: #e5989b;
